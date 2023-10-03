@@ -1,0 +1,134 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+body {
+    font-family: 'Nunito', sans-serif;
+    padding: 60px;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+.entrevista{
+    text-align: center;
+}
+
+
+
+.medusa, .hardwell {
+    //height: 250px;
+    //width: 400px;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column; //Aqui estaba row
+    //justify-content: space-between;
+    //flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1;
+    //margin: 0 10px 100px 10px;
+    margin-bottom: 30px;
+}
+.flex item img {
+    max-width: 100%;
+    height: auto;
+}
+
+#carouselExampleCaptions{
+    height: 300px;
+    width: 600px;
+    margin: 0 auto;
+}
+.carousel-inner .carousel-item img {
+     width: 600px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.separador {
+    border: 1px solid black;
+}
+
+.btn-registro {
+    margin-left: 45%;
+}
+
+
+.partners{
+    background-color:#CACFD2;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.im_partners{
+    height: 150px;
+    width: 30%;
+    margin: 10px 5px;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .im_partners {
+        width: 100%;
+        margin: 10px 0; /* ajusta según necesidades */
+    }
+}
+
+
+
+.contacto {
+    background-color: #c9c9c9;
+    margin: 5% 10%;
+    //margin-left: 25%;
+    //margin-right:25%;
+    border: 1px solid black;
+    margin-bottom: 5%;
+    padding: 20px; //lo acabo de añadir
+
+}
+
+.f_contacto{
+    margin-left: 0; //lo tenia a 10%
+
+}
+
+.btn_form {
+    margin: 0 auto;
+    display: block;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 80%;
+}
+
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card_contacto {
+    background-color: #969696;
+}
+
+
