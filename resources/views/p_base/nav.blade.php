@@ -15,22 +15,35 @@
                 <a class="nav-link" href="{{route('inicio')}}">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{'eventos'}}">Eventos</a>
+                <a class="nav-link" href="{{route('eventos.index')}}">Eventos</a>
             </li>
+            @if (auth()->check() && auth()->user()->rol_id === 1)
             <li class="nav-item">
                 <a class="nav-link" href="{{'nuevo_evento'}}">Nuevo Evento</a>
             </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="{{'comprar_entradas'}}">Compra Entradas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{'contacto'}}">Contacto</a>
             </li>
+            @if(auth()->check())
             <li class="nav-item">
-
-                <a class="nav-link" href="{{'login'}}">Acceder</a>
-
+                <a class="nav-link" style="color:darkgoldenrod"> Bienvenid@ {{auth()->user()->nombre}}</a>
             </li>
+            @endif
+
+            @if(auth()->check())
+            <li class="nav-item">
+                <a class="nav-link" href={{route ('logout')}}> Logout</a>
+            </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{'login'}}"> <i class="far  fa-user"></i> Acceder</a>
+            </li>
+
+            @endif
         </ul>
     </div>
 </nav>

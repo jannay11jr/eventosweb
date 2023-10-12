@@ -13,15 +13,9 @@
         <div class="card-body card_contacto">
 
 
-    @if ($errors->any())
-    <ul>
-    @foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-    </ul>
-    @endif
 
-<form method="POST" action="" class="f_contacto">
+
+<form action="{{route('contacto.store')}}" method="POST" class="f_contacto">
     @csrf
 
     <div class="form-group">

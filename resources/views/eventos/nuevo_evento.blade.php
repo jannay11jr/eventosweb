@@ -5,7 +5,7 @@
 @section('contenido')
     <div class="container">
         <h1>Crear Evento</h1>
-       {{-- <form action="{{route(eventos.store)}}" method="POST" enctype="multipart/form-data"> --}}
+       <form action="{{route('eventos.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -19,11 +19,21 @@
             </div>
 
             <div class="form-group">
-                <label for="genero">Género</label>
-                <select class="form-control" id="genero" name="genero">
-                    <option value="rock">Rock</option>
-                    <option value="urbano">Urbano</option>
-                    <option value="electronica">Música Electrónica</option>
+                <label for="localizacion">Localizacion</label>
+                <input type="text" class="form-control" id="loc_evento" name="loc_evento">
+            </div>
+
+            <div class="form-group">
+                <label for="desc_evento">Descripción</label>
+                <textarea class="form-control" id="desc_evento" name="desc_evento"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="gnr_evento">Género</label>
+                <select class="form-control" id="gnr_evento" name="gnr_evento">
+                    @foreach($generos as $genero)
+                        <option value="{{$genero->nombre}}"> {{$genero->nombre}} </option>
+                    @endforeach
                 </select>
             </div>
 
@@ -32,7 +42,7 @@
                 <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/jpeg">
             </div>
 
-            <button type="submit" class="btn btn-primary">Crear Evento</button>
+            <button type="submit" class="btn btn-dark">Crear Evento</button>
         </form>
     </div>
 @endsection

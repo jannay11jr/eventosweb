@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
@@ -11,41 +12,10 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $eventos = array(
-            array("fecha" => "26/10/2023",
-            "nombre" => "Ozuna",
-            "imagen" => "img/eventos/ozuna.jpg",
-            "genero" => "Reggaeton"),
-            array("fecha" => "26/1/2024",
-            "nombre" => "Medusa Festival",
-            "imagen" => "img/eventos/medusa.jpg",
-            "genero" => "Electrónica"),
-            array("fecha" => "2/11/2023",
-            "nombre" => "Zevra Festival",
-            "imagen" => "img/eventos/zevra.jpg",
-            "genero" => "Urbano"),
-            array("fecha" => "26/10/2023",
-            "nombre" => "Monegros",
-            "imagen" => "img/eventos/monegros.jpeg",
-            "genero" => "Electrónica"),
-            array("fecha" => "26/10/2024",
-            "nombre" => "Summer Story",
-            "imagen" => "img/eventos/summer_story.jpg",
-            "genero" => "Electrónica"),
-            array("fecha" => "26/10/2024",
-            "nombre" => "Malú",
-            "imagen" => "img/eventos/malu.jpeg",
-            "genero" => "Pop"),
-            array("fecha" => "04/10/2025",
-            "nombre" => "Estopa",
-            "imagen" => "img/eventos/estopa.jpg",
-            "genero" => "Pop"),
-            array("fecha" => "31/12/2023",
-            "nombre" => "Travis Scott",
-            "imagen" => "img/eventos/travis_scott.jpg",
-            "genero" => "Rap"),
-        );
-        return view('eventos/eventos', compact('eventos'));
+            $eventos = Evento::orderBy('fecha')->get();
+            $eventos = Evento::paginate(6);
+            return view ('eventos.eventos', compact('eventos'));
+
     }
 
     /**
@@ -53,7 +23,7 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        $eventos = Evento::get();
     }
 
     /**
@@ -61,7 +31,15 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $evento = new Evento();
+        $evento->name = $request->get('nombre_evento');
+        $evento->localizacion = $request->get('loc_evento');
+        $evento->fecha = $request->get('fecha_evento');
+        $evento->descripcion = $request->get('desc_evento');
+        $evento->genero = $request->get('gnr_evento');
+        $evento->save();
+        return redirect()->route('eventos.index')->with('succes','Evento creado correctamente');
+
     }
 
     /**
@@ -69,7 +47,8 @@ class EventoController extends Controller
      */
     public function show(string $id)
     {
-        return "Mostrando ficha de evento  $id";
+        $evento = Evento::findOrFail($id);
+        return view('eventos/e_detalles',compact('evento'));
     }
 
     /**
@@ -93,6 +72,9 @@ class EventoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Evento::findOrFail($id)->delete();
+        $eventos = Evento::get();
+        //return view('eventos/eventos', compact('eventos'));
+        return redirect()->route('eventos.index')->with('succes', 'Evento eliminado correctamente');
     }
 }

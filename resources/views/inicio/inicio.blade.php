@@ -3,20 +3,22 @@
 @section('titulo', 'Inicio')
 
 @section('contenido')
-    <h1>Bienvenido a la página de Event-ticket</h1>
-    <p>En esta página encontrarás todo lo relacionado con noticias y entrevistas, acerca de los últimos eventos músicales</p>
+    <h1 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)">BIENVENIDO A LA PÁGINA DE EVENT-TICKET</h1>
+    <p style="text-align: center">Noticias, entrevistas y mucho más.</p>
 
-    <div class="flex-container">
-        <div class="flex-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-6">
     <article>
-        <h2>Hardwell vuelve a los escenarios</h2>
+        <h2>Hardwell vuelve tras tres años de ausencia</h2>
         <p>Robbert van de Corput, más conocido como Hardwell, es un DJ, productor discográfico y remixer neerlandés, todos sabemos que decidió darse un tiempo de forma temporal, hablamos de septiembre de 2018 cuando decidió dar la noticia, la vida de DJ es muy dura y con mucho estrés pero todo indica a que se ha recuperado y que volverá más fuerte que nunca.</p>
-        <img src="{{ asset('img/hardwell2.jpg') }}" alt="Hardwell" class="hardwell">
+        <p>Su padre le enseñó a utilizar el piano. A los 10 años de edad descubrió su pasión por la música, y con solo 12 años comenzó su carrera como DJ realizando presentaciones en distintos clubes de los Países Bajos, logrando ganar un buen reconocimiento en su país por sus innovadoras mezclas. A los 16 años ya había 4 discos a su nombre. Actualmente es reconocido mundialmente por la industria de la música electrónica, es considerado uno de los mejores DJs del mundo.</p>
+        <img src="{{ asset('img/hardwell2.jpg') }}" alt="Hardwell" class="hardwell" style="margin-bottom: 3%">
 
     </article>
         </div>
 
-        <div class="flex-item">
+        <div class="col-12 col-md-12 col-lg-6">
     <article>
         <h2>Medusa celebrará el próximo verano su décimo aniversario</h2>
         <p>Uno de los mayores festivales de música electrónica del mundo y el mayor a nivel nacional cumplirá su décimo aniversario el próximo verano, Medusa Festival buscará reinventarse y hacer que el publico celebre los diez años del festival a lo grande y como más le gusta a la organización, bailando eléctronica.</p>
@@ -28,8 +30,14 @@
         </div>
     </div>
 
-    <h3>Recuerda que para la compra de cualquier entrada en esta página web debes de estar registrado, ¿a que esperas?</h3>
-    <button style="align-content: center" class="btn btn-primary btn-registro"> Registrate aquí </button>
+
+     <div class="frases">
+        <h1>¡Compra tus entradas para los mejores festivales!</h1>
+        <p>¡No te pierdas los eventos musicales más emocionantes del año! Compra tus entradas ahora y asegura tu lugar en los festivales más populares.</p>
+
+        <a class="btn btn-frases" style="text-align:center" href="{{('comprar_entradas')}}">Comprar Entradas</a>
+    </div>
+
 
     <hr class="separador my-4">
 
@@ -37,7 +45,7 @@
 
     <h3 class="center">Algunos artistas de los que eventualmente vendemos tickets</h3>
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
 
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -59,23 +67,23 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/melendi.jpg" class="d-block w-100" alt="...">
+          <img src="img/melendi.jpg" class="d-block w-100" alt="Foto de Melendi">
           <div class="carousel-caption d-none d-md-block">
             <h5>Melendi</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="img/paulo_londra.jpg" class="d-block w-100" alt="...">
+          <img src="img/paulo_londra.jpg" class="d-block w-100" alt="Foto de Paulo Londra">
           <div class="carousel-caption d-none d-md-block">
             <h5>Paulo Londra</h5>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Mail;
-use App\Http\Requests\ContactoRequest;
-use App\Mail\ContactoMailable;
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
-class ContactoController extends Controller
+class GeneroController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('contacto.contacto');
+        $generos = Genero::orderBy('nombre')->get();
+        return view ('eventos.nuevo_evento', compact('generos'));
     }
 
     /**
@@ -28,12 +27,9 @@ class ContactoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(ContactoRequest $request)
+    public function store(Request $request)
     {
-        Mail::to('event-ticket@info.com')
-            ->send(new ContactoMailable($request->all()));
-
-            return view('mails.men_enviado');
+        //
     }
 
     /**

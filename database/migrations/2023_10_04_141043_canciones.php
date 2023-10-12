@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('canciones', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('dni')->unique();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('url');
+            $table->unsignedBigInteger('artista_id');
+            $table->foreign('artista_id')->references('id')->on('artistas');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('rol_id');
-            $table->foreign('rol_id')->references('id')->on('roles');
 
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('canciones');
     }
 };

@@ -22,7 +22,7 @@
                 <label for="mariaEntradas">Maria Becerra (44€)</label>
                 <input type="number" class="form-control" id="mariaEntradas" min="0" value="0">
             </div>
-            <button type="submit" class="btn btn-primary">Calcular Precio Total</button>
+            <button type="submit" class="btn btn-dark">COMPRAR</button>
         </form>
         <div id="totalPrice"></div>
     </div>
