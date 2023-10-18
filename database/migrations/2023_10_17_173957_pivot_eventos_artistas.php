@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('entradas', function (Blueprint $table) {
+        Schema::create('pivot_eventos_artistas', function (Blueprint $table) {
             $table->id();
-            $table->integer('precio');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
-            $table->timestamps();
             $table->unsignedBigInteger('evento_id');
             $table->foreign('evento_id')->references('id')->on('eventos');
-            $table->unsignedBigInteger('compra_id');
-            $table->foreign('compra_id')->references('id')->on('compras');
+            $table->unsignedBigInteger('artista_id');
+            $table->foreign('artista_id')->references('id')->on('artistas');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('entradas');
+        Schema::dropIfExists('pivot_eventos_artistas');
     }
 };

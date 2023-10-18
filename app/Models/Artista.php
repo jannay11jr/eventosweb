@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artista extends Model
 {
-    protected $table = 'canciones';
+    protected $table = 'artistas';
     use HasFactory;
 
     public function generos(){
@@ -16,4 +16,9 @@ class Artista extends Model
     public function canciones(){
         return $this->belongsTo(Cancion::class);
     }
+
+    public function eventos(){
+        return $this->belongsToMany(Evento::class, 'pivot_eventos_artistas', 'evento_id', 'artista_id');
+    }
+
 }

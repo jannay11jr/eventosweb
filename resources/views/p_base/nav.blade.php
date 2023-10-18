@@ -19,14 +19,14 @@
             </li>
             @if (auth()->check() && auth()->user()->rol_id === 1)
             <li class="nav-item">
-                <a class="nav-link" href="{{'nuevo_evento'}}">Nuevo Evento</a>
+                <a class="nav-link" href="{{route('nuevo_evento')}}">Nuevo Evento</a>
             </li>
             @endif
             <li class="nav-item">
-                <a class="nav-link" href="{{'comprar_entradas'}}">Compra Entradas</a>
+                <a class="nav-link" href="{{route('comprar_entradas')}}">Compra Entradas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{'contacto'}}">Contacto</a>
+                <a class="nav-link" href="{{route('contacto.store')}}">Contacto</a>
             </li>
             @if(auth()->check())
             <li class="nav-item">

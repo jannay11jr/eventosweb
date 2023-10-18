@@ -20,5 +20,14 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(UsuariosSeeder::class);
         $this->call(RolesSeeder::class);
+        $this->call(EventosSeeder::class);
+        $this->call(ArtistasSeeder::class);
+        $this->call(CancionesSeeder::class);
+        $this->call(ComprasSeeder::class);
+        $this->call(EntradasSeeder::class);
+        $this->call(GenerosSeeder::class);
+        $this->call(PivotSeeder::class);
+
+
     }
 }

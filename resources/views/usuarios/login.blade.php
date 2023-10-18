@@ -7,6 +7,8 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <h3>Para comprar entradas es necesario iniciar sesión</h1>
+
             <div class="card">
                 <div class="card-header" style="text-align: center">
                     Iniciar sesión
@@ -17,7 +19,6 @@
                     {{ $error }}
                     </div>
                     @endif
-
 
                     <form action="{{route('login.login')}}" method="POST">
                         @csrf

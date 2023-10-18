@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistroMailable;
+
 
 class RegisterController extends Controller
 {
@@ -33,6 +36,9 @@ class RegisterController extends Controller
      */
     public function store(RegisterRequest $request)
     {
+
+
+
         $usuario = new Usuario();
         $usuario->nombre = $request->input('registro_nombre');
         $usuario->dni = $request->input('registro_dni');
@@ -43,6 +49,8 @@ class RegisterController extends Controller
 
 
         Session::flash('registro_exitoso', 'La cuenta de usuario se ha creado con éxito');
+        Mail::to('event-ticket@info.com')->send(new RegistroMailable($request->all()));
+
 
         return redirect()->route('registro');
     }

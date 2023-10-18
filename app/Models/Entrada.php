@@ -11,7 +11,7 @@ class Entrada extends Model
     use HasFactory;
 
     public function eventos(){
-        return $this->hasMany(Evento::class);
+        return $this->belongsTo(Evento::class);
     }
 
     public function compras(){

@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('localizacion');
             $table->text('descripcion');
-            $table->string('imagen');
+            $table->binary('imagen');
             $table->date('fecha');
+            $table->integer('media_publico');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

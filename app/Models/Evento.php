@@ -11,10 +11,10 @@ class Evento extends Model
     use HasFactory;
 
     public function artistas(){
-        return $this->hasMany(Artista::class);
+        return $this->belongsToMany(Artista::class, 'pivot_eventos_artistas', 'artista_id', 'evento_id');
     }
 
     public function entradas(){
-        return $this->belongsTo(Entrada::class);
+        return $this->hasMany(Entrada::class);
     }
 }

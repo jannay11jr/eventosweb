@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Entrada;
+use App\Models\Artista;
 use App\Models\Evento;
 
 
@@ -11,8 +11,7 @@ class ComprasController extends Controller
 {
     public function index()
     {
-        $eventos = Evento::all();
-        return view('entradas/entradas')->with('eventos', $eventos);
+
     }
 
     /**
