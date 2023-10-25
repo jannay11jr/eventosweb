@@ -25,7 +25,7 @@ class PivotSeeder extends Seeder
         $pivot->save();
 
         $pivot = new pivot_eventos_artistas();
-        $pivot->evento_id = 3;
+        $pivot->evento_id = 2;
         $pivot->artista_id = 3;
         $pivot->save();
 

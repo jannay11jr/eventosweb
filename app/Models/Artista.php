@@ -18,7 +18,7 @@ class Artista extends Model
     }
 
     public function eventos(){
-        return $this->belongsToMany(Evento::class, 'pivot_eventos_artistas', 'evento_id', 'artista_id');
+        return $this->belongsToMany(Evento::class, 'pivot_eventos_artistas', 'artista_id', 'evento_id');
     }
 
 }

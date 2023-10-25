@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('img');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('genero_id');
-            $table->foreign('genero_id')->references('id')->on('generos');
+            $table->unsignedBigInteger('generos_id');
+            $table->foreign('generos_id')->references('id')->on('generos');
         });
     }
 

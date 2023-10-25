@@ -77,9 +77,13 @@ class EventoController extends Controller
     public function show(string $id)
     {
         $evento = Evento::findOrFail($id);
-        //$evento = Evento::with('artistas')->findOrFail($id);
-        $artistas = $evento->artistas()->get();
-        return view('eventos/e_detalles',compact('evento', 'artistas'));
+        //$evento->load('artistas');
+        $evento->load('artistas.generos');
+        $generosUnicos = $evento->artistas->unique('generos.id')->pluck('generos');
+
+        //print $evento;
+        //$artistas = Evento::findOrFail($id)->artistas;
+        return view('eventos/e_detalles',compact('evento', 'generosUnicos'));
     }
 
     /**
