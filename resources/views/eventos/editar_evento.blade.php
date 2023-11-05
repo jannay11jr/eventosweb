@@ -29,14 +29,6 @@
             <textarea class="form-control" id="desc_evento" name="desc_evento" {{$evento->descripcion}}></textarea>
         </div>
 
-        {{-- <div class="form-group">
-            <label for="gnr_evento">Género</label>
-            <select class="form-control" id="gnr_evento" name="gnr_evento">
-                @foreach($generos as $genero)
-                    <option value="{{$genero->nombre}}"> {{$genero->nombre}} </option>
-                @endforeach
-            </select>
-        </div> --}}
 
         <div class="form-group">
             <label for="imagen">Imagen</label>

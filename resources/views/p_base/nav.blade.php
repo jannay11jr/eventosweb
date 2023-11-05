@@ -21,7 +21,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('nuevo_evento')}}">Nuevo Evento</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('artistas.index')}}">Artistas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('nuevo_artista')}}">Nuevo Artista</a>
+            </li>
+
             @endif
+
             <li class="nav-item">
                 <a class="nav-link" href="{{route('comprar_entradas')}}">Compra Entradas</a>
             </li>

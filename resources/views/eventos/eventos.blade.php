@@ -27,7 +27,7 @@
                         <form action="{{route('eventos.destroy',$evento)}}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button class="btn btn-danger">Borrar</button>
+                            <button class="btn btn-danger btn-evento-borrar">Borrar</button>
                         </form>
                         @endif
 

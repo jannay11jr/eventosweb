@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('artistas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('img');
+            $table->binary('img');
             $table->rememberToken();
             $table->timestamps();
             $table->unsignedBigInteger('generos_id');

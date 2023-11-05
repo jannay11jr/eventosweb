@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\ArtistasController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ComprasController;
 use App\Http\Controllers\GeneroController;
@@ -48,7 +49,8 @@ return view('eventos/nuevo_evento');
 
 
 Route::post('login', [LoginController::class, 'login']);
-Route::get('login', [LoginController::class, 'loginForm'])->name('login.login');
+Route::get('login', [LoginController::class, 'loginForm'])->middleware('redirigeInicio')->name('login.login');
+
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -84,6 +86,21 @@ Route::post('eventos', [EventoController:: class, 'store'])->name('eventos.store
 
 
 Route::get('/nuevo_evento', [GeneroController::class, 'index'])->name('nuevo_evento')->middleware('middleRol:1');
+
+
+
+
+Route::get('/nuevo_artista', [ArtistasController::class, 'create'])->name('nuevo_artista')->middleware('middleRol:1');
+
+Route::get('artistas', [ArtistasController:: class, 'index'])->name('artistas.index')->middleware('middleRol:1');
+Route::delete('artistas/{id}', [ArtistasController:: class, 'destroy'])->name('artistas.destroy')->middleware('middleRol:1');
+Route::put('artistas/{id}', [ArtistasController:: class, 'update'])->name('artistas.update')->middleware('middleRol:1');
+
+
+Route::get('artistas/{id}/edit', [ArtistasController::class, 'edit'])->name('artistas.edit')->middleware('middleRol:1');
+
+Route::post('artistas', [ArtistasController:: class, 'store'])->name('artistas.store')->middleware('middleRol:1');
+
 
 
 

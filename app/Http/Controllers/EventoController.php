@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\EventoRequest;
 
+use App\Models\Image;
+use DateTime;
+use Illuminate\Support\Facades\Date;
 
 class EventoController extends Controller
 {
@@ -53,6 +56,12 @@ class EventoController extends Controller
      */
     public function store(EventoRequest $request)
     {
+        $fechaActual = new DateTime();
+        $fechaEvento = new DateTime($request->input('fecha_evento'));
+
+        if ($fechaEvento < $fechaActual) {
+        return redirect()->route('eventos.index')->with('error', 'La fecha del evento debe ser mayor o igual a la fecha actual.');
+        }
 
         $evento = new Evento();
         $evento->nombre = $request->get('nombre_evento');
@@ -61,8 +70,13 @@ class EventoController extends Controller
         $evento->descripcion = $request->get('desc_evento');
 
         if ($request->hasFile('imagen')) {
-            $imagePath = $request->file('imagen')->store('public/img/eventos');
-            $evento->imagen = Storage::url($imagePath);
+            $imagen = $request->file('imagen');
+            $imageName = $request->file('imagen') ->getClientOriginalName();
+            $destinationPath = public_path('/img/eventos');
+
+            $imagen->move($destinationPath, $imageName);
+
+            $evento->imagen = '/img/eventos/' . $imageName;
         }
 
         $evento->media_publico = $request->get('media');
@@ -77,12 +91,10 @@ class EventoController extends Controller
     public function show(string $id)
     {
         $evento = Evento::findOrFail($id);
-        //$evento->load('artistas');
         $evento->load('artistas.generos');
         $generosUnicos = $evento->artistas->unique('generos.id')->pluck('generos');
 
-        //print $evento;
-        //$artistas = Evento::findOrFail($id)->artistas;
+
         return view('eventos/e_detalles',compact('evento', 'generosUnicos'));
     }
 
@@ -102,6 +114,7 @@ class EventoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
         $evento = Evento::findOrFail($id);
 
         $evento->nombre = $request->input('nombre_evento');
@@ -122,7 +135,6 @@ class EventoController extends Controller
     {
         Evento::findOrFail($id)->delete();
         $eventos = Evento::get();
-        //return view('eventos/eventos', compact('eventos'));
         return redirect()->route('eventos.index')->with('succes', 'Evento eliminado correctamente');
     }
 }

@@ -53,7 +53,7 @@ class ArtistasSeeder extends Seeder
 
 
         $artista = new Artista();
-        $artista ->nombre = "Milo";
+        $artista ->nombre = "Milo J";
         $artista ->img = ('/img/artistas/milo.jpg');
         $artista->generos_id = 3;
         $artista->save();

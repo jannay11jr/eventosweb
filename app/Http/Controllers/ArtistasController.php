@@ -1,17 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\ArtistaRequest;
 use App\Models\Artista;
 use App\Models\Evento;
 
 
 use Illuminate\Http\Request;
 
-class ComprasController extends Controller
+class ArtistasController extends Controller
 {
+
+
     public function index()
     {
+        $artistas = Artista::orderBy('nombre')->get();
 
+            $artistas = Artista::paginate(6);
+            return view ('eventos.artistas', compact('artistas'));
+
+        //return view ('eventos.nuevo_artista');
     }
 
     /**
@@ -19,6 +28,8 @@ class ComprasController extends Controller
      */
     public function create()
     {
+        $eventos = Evento::all();
+        return view('eventos.nuevo_artista', compact('eventos'));
 
 
     }
@@ -26,8 +37,27 @@ class ComprasController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ArtistaRequest $request)
     {
+
+        $artista = new Artista();
+        $artista->nombre = $request->get('nombre_artista');
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $imageName = $request->file('imagen') ->getClientOriginalName();
+            $destinationPath = public_path('/img/artistas');
+
+            $imagen->move($destinationPath, $imageName);
+
+            $artista->img = '/img/artistas/' . $imageName;
+        }
+        $artista->generos_id = $request->input('generos_id');
+        $artista->save();
+
+        $eventosSeleccionados = $request->input('eventos', []);
+        $artista->eventos()->sync($eventosSeleccionados);
+
+        return view('eventos.artista_creado')->with('success','Artista creado correctamente');
 
     }
 
@@ -44,7 +74,9 @@ class ComprasController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $artista = Artista::findOrFail($id);
+        return view('eventos.editar_artista', compact('artista'));
     }
 
     /**
@@ -52,7 +84,21 @@ class ComprasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $artista = Artista::findOrFail($id);
+        $artista->nombre = $request->input('nombre_artista');
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $imageName = $request->file('imagen') ->getClientOriginalName();
+            $destinationPath = public_path('/img/artistas');
+
+            $imagen->move($destinationPath, $imageName);
+
+            $artista->img = '/img/artistas/' . $imageName;
+        }
+        $artista->generos_id = $request->input('generos_id');
+        $artista->save();
+        return redirect()->route('artistas.index')->with('success', 'Artista actualizado correctamente.');
+
     }
 
     /**
@@ -60,6 +106,9 @@ class ComprasController extends Controller
      */
     public function destroy(string $id)
     {
-
+        Artista::findOrFail($id)->delete();
+        $artistas = Artista::get();
+        //return view('eventos/eventos', compact('eventos'));
+        return redirect()->route('artistas.index')->with('succes', 'Artista eliminado correctamente');
     }
 }

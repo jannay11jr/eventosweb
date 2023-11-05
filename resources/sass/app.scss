@@ -56,14 +56,18 @@ input {
 }
 
 #carouselCaptions{
-    height: 300px;
-    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    //width: 600px;
     margin: 0 auto;
 }
+
+
+
 .carousel-inner .carousel-item img {
     //width: 600px;
     max-width: 100%;
-    height: 300px;
+    height: 600px;
     object-fit: cover;
 }
 
@@ -77,32 +81,17 @@ input {
 }
 
 
-.partners{
-    background-color:#CACFD2;
+
+
+.im_partners {
     height: auto;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
-.im_partners{
-    height: 150px;
-    width: 30%;
-    margin: 10px 5px;
-    flex-grow: 1;
+.sponsors {
+    background-color:  #FFECB3;
+
 }
-
-@media (max-width: 768px) {
-    .im_partners {
-        width: 100%;
-        margin: 10px 0; /* ajusta según necesidades */
-    }
-}
-
-
-
-
 
 
 
@@ -167,5 +156,25 @@ input[type="text"], input[type="email"], textarea {
         background-color: grey;
     }
 
+.enlaces_artistas{
+    text-decoration: none;
+    color: inherit;
+}
 
+.entradasForm {
+    max-height: 600px;
+    overflow-y: auto;
+
+}
+
+
+.btn-evento-borrar{
+    margin-top: 15px;
+}
+
+
+.video_yt{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
 

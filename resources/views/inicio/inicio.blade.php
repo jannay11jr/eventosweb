@@ -93,15 +93,29 @@
 
 <hr class="separador my-4">
 
-<h3>PATROCINADORES/SPONSORS</h3>
+<div class="row">
+    <h3 class="center">Aftermovies más recientes de conciertos y festivales que colaboran con Event-Ticket</h3>
+    <div class="col-12 col-md-6 col-lg-6 video_yt">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CbRoIUjeNM8?si=fIB-2PPqycO7sDwy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 video_yt">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/izYDADBHhmk?si=ieukt357nBlGjPY3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
 
-<div class="partners">
+<h3 class="center mt-3 mb-3">PATROCINADORES/SPONSORS</h3>
 
-    <img class="im_partners" src="img/cola.png" alt="">
+<div class="row sponsors">
 
-    <img class="im_partners" src="img/fagor.png" alt="">
-
-    <img class="im_partners" src="img/acer.png" alt="">
+    <div class="col-4 col-md-4 col-lg-4">
+    <img class="im_partners" src="img/cola.png" >
+    </div>
+    <div class="col-4 col-md-4 col-lg-4">
+    <img class="im_partners" src="img/fagor.png">
+    </div>
+    <div class="col-4 col-md-4 col-lg-4">
+    <img class="im_partners" src="img/sony.png">
+    </div>
 
 </div>
 

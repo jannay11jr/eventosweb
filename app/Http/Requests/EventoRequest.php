@@ -27,7 +27,7 @@ class EventoRequest extends FormRequest
             'fecha_evento' => 'required',
             'desc_evento' => 'required',
             'imagen' => 'required|image',
-            'media' => 'required'
+            'media' => 'required|numeric'
         ];
     }
 
@@ -43,8 +43,8 @@ class EventoRequest extends FormRequest
              'desc_evento.required' => 'La descripción del evento es obligatoria',
              'imagen.required' => 'La imagen del evento es obligatoria',
              'imagen.image' => 'El archivo debe de ser de tipo imagen',
-             'media.required' => 'La media de espectadores es obligatoria'
-
+             'media.required' => 'La media de espectadores es obligatoria',
+             'media.numeric' => 'La media de espectadores debe de ir en formato númerico'
         ];
     }
 }

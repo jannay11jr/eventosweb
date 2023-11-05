@@ -19,40 +19,47 @@
     @csrf
 
     <div class="form-group">
+        <div class="col-sm-6">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" class="form-control" style="width: 70%" value="{{ old('nombre') }}"><br>
     @if ($errors->has('nombre'))
     <div class="text-danger"> {{ $errors->first('nombre') }} </div>
     @endif
-
+        </div>
     </div>
 
     <div class="form-group">
+        <div class="col-sm-6">
     <label for="telefono">Teléfono:</label>
     <input type="text" id="telefono" name="telefono" class="form-control"   value="{{ old('telefono') }}"><br>
     @if ($errors->has('telefono'))
     <div class="text-danger"> {{ $errors->first('telefono') }} </div>
     @endif
+        </div>
     </div>
 
     <div class="form-group">
+        <div class="col-sm-6">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" class="form-control"  value="{{ old('email') }}"><br>
     @if ($errors->has('email'))
     <div class="text-danger"> {{ $errors->first('email') }} </div>
     @endif
-    </div>
+        </div>
+</div>
 
     <div class="form-group">
+        <div class="col-sm-8">
     <label for="asunto">Asunto:</label>
     <input type="text" id="asunto" name="asunto" class="form-control" value="{{ old('asunto') }}"><br>
     @if ($errors->has('asunto'))
     <div class="text-danger"> {{ $errors->first('asunto') }} </div>
     @endif
     </div>
+</div>
 
     <div class="form-group">
-    <div style="display: flex; flex-direction: column;">
+    <div class="col-sm-12" style="display: flex; flex-direction: column;">
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" class="form-control" style="width: 90%; height: 120px;">{{ old('mensaje') }}</textarea><br>
       </div>

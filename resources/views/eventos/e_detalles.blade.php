@@ -14,7 +14,8 @@
             <p class="card-text"><strong>Género:</strong>
 
                 @foreach ($generosUnicos as $genero)
-                    {{$genero->nombre}},
+
+                    {{$genero->nombre}}
 
                 @endforeach
             </p>
@@ -23,7 +24,8 @@
             <div class="row justify-content-center">
                 @foreach ($evento->artistas as $artista)
                 <div class="col text-center">
-                    <img src="{{$artista->img}}" style="height: 200px; width: 200px" class="img-fluid rounded-circle" alt="{{$artista->nombre}}">
+                    <a href="https://open.spotify.com/search/{{$artista->nombre}}"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="{{$artista->img}}" style="height: 200px; width: 200px" class="img-fluid rounded-circle" alt="{{$artista->nombre}}"> <p>{{$artista->nombre}}</p></a>
+
                 </div>
                 @endforeach
             </div>

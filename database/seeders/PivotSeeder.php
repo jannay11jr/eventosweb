@@ -30,7 +30,7 @@ class PivotSeeder extends Seeder
         $pivot->save();
 
         $pivot = new pivot_eventos_artistas();
-        $pivot->evento_id = 4;
+        $pivot->evento_id = 3;
         $pivot->artista_id = 4;
         $pivot->save();
 
@@ -55,7 +55,7 @@ class PivotSeeder extends Seeder
         $pivot->save();
 
         $pivot = new pivot_eventos_artistas();
-        $pivot->evento_id = 3;
+        $pivot->evento_id = 1;
         $pivot->artista_id = 9;
         $pivot->save();
 
@@ -65,12 +65,12 @@ class PivotSeeder extends Seeder
         $pivot->save();
 
         $pivot = new pivot_eventos_artistas();
-        $pivot->evento_id = 2;
+        $pivot->evento_id = 4;
         $pivot->artista_id =11;
         $pivot->save();
 
         $pivot = new pivot_eventos_artistas();
-        $pivot->evento_id = 4;
+        $pivot->evento_id = 3;
         $pivot->artista_id = 12;
         $pivot->save();
     }

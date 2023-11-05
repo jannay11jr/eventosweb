@@ -25,7 +25,7 @@ class RegisterRequest extends FormRequest
             'registro_nombre' => 'required|regex:/^[a-zA-Z\s]+$/|min:3',
             'registro_dni' =>'required|regex:/\d{8}[A-Za-z]/',
             'registro_email' => 'required|email',
-            'registro_password' => 'required|regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&._-€,`+\"#%])[A-Za-z\d@$!%*?&]{8,}$/',/*Minimo un numero, una letra y un caracter especial, minimo ocho caracteres */
+            'registro_password' => 'required|regex:/^(?=.*[A-Za-z])(?=.*\d).{8,}$/',/*Minimo un numero, una letra y longitud minima de ocho caracteres */
             'registro_password2' => 'required|same:registro_password'
         ];
     }
@@ -41,7 +41,7 @@ class RegisterRequest extends FormRequest
          'registro_email.required' => 'El email es obligatorio',
          'registro_email.email' => 'Formato de email no válido',
          'registro_password.required' => 'La contraseña es obligatoria',
-         'registro_password.regex' => 'La contraseña debe de tener un núm, letra y caract especial (@$!%*?&._-€,`+\"#%). Mínimo ocho caracteres',
+         'registro_password.regex' => 'La contraseña debe de tener minimo un numero, una letra y longitud minima de ocho caracteres',
          'registro_password2.required' => 'La contraseña es requerida',
          'registro_password2.same' => 'Las contraseñas no coinciden'
 
