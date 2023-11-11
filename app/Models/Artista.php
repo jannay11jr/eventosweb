@@ -12,7 +12,7 @@ class Artista extends Model
 
     public function generos(){
         return $this->belongsTo(Genero::class);
-    }
+        }
     public function canciones(){
         return $this->belongsTo(Cancion::class);
     }

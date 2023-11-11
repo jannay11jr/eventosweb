@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ArtistaRequest;
+use App\Http\Requests\EditarArtistaRequest;
 use App\Models\Artista;
 use App\Models\Evento;
-
-
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
 class ArtistasController extends Controller
@@ -74,15 +74,16 @@ class ArtistasController extends Controller
      */
     public function edit(string $id)
     {
-
+        //$generos = Genero::all();
+        $eventos = Evento::all();
         $artista = Artista::findOrFail($id);
-        return view('eventos.editar_artista', compact('artista'));
+        return view('eventos.editar_artista', compact('artista', 'eventos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EditarArtistaRequest $request, string $id)
     {
         $artista = Artista::findOrFail($id);
         $artista->nombre = $request->input('nombre_artista');
@@ -97,6 +98,8 @@ class ArtistasController extends Controller
         }
         $artista->generos_id = $request->input('generos_id');
         $artista->save();
+        $eventosSeleccionados = $request->input('eventos', []);
+        $artista->eventos()->sync($eventosSeleccionados);
         return redirect()->route('artistas.index')->with('success', 'Artista actualizado correctamente.');
 
     }
@@ -108,7 +111,6 @@ class ArtistasController extends Controller
     {
         Artista::findOrFail($id)->delete();
         $artistas = Artista::get();
-        //return view('eventos/eventos', compact('eventos'));
         return redirect()->route('artistas.index')->with('succes', 'Artista eliminado correctamente');
     }
 }

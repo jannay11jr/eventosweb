@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditarEventoRequest;
 use App\Models\Artista;
 use App\Models\Evento;
 use Illuminate\Http\Request;
@@ -112,7 +113,7 @@ class EventoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EditarEventoRequest $request, string $id)
     {
 
         $evento = Evento::findOrFail($id);
@@ -121,8 +122,14 @@ class EventoController extends Controller
         $evento->localizacion = $request->input('loc_evento');
         $evento->fecha = $request->input('fecha_evento');
         $evento->descripcion = $request->input('desc_evento');
-        $evento->imagen = $request->input('imagen');
-        $evento->media_publico = $request->input('media');
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $imageName = $request->file('imagen') ->getClientOriginalName();
+            $destinationPath = public_path('/img/eventos');
+            $imagen->move($destinationPath, $imageName);
+            $evento->imagen = '/img/eventos/' . $imageName;
+        }
+              $evento->media_publico = $request->input('media');
         $evento->save();
         return redirect()->route('eventos.index')->with('success', 'Evento actualizado correctamente.');
 

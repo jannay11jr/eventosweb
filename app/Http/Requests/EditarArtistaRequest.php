@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ArtistaRequest extends FormRequest
+class EditarArtistaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,7 @@ class ArtistaRequest extends FormRequest
     {
         return [
             'nombre_artista' => 'required|min:3',
-            'imagen' => 'required | image'
+            'imagen' => 'image'
         ];
     }
 
@@ -31,11 +31,10 @@ class ArtistaRequest extends FormRequest
 public function messages()
 {
     return [
-        'nombre_artista.required' => 'El nombre es obligatorio',
-        'nombre_artista.min' => 'El nombre tiene que tener minimo tres caracteres',
-        'imagen.required' => 'La imagen es requerida'
+         'nombre_artista.required' => 'El nombre es obligatorio',
+         'nombre_artista.min' => 'El nombre tiene que tener minimo tres caracteres',
+         'imagen.image' => 'El formato no es válido, debe de ser formato imagen'
 
-    ];
+        ];
     }
 }
-

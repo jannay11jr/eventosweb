@@ -43,9 +43,8 @@ class Usuario extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected $table = 'usuarios';
+    protected $table = 'users';
     use HasFactory;
-
 
     public function compras(){
         return $this->hasMany(Compra::class);
