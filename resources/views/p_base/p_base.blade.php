@@ -12,6 +12,12 @@
         </div>
         <div class="container mt-3 margin-top-navbar">
         @yield('contenido')
+        <style>
+            body{
+             background-color: #393E41;
+            color: #E7E5DF;
+            }
+        </style>
     </div>
     </body>
 </html>

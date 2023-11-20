@@ -81,6 +81,8 @@ class EventoController extends Controller
         }
 
         $evento->media_publico = $request->get('media');
+        $evento->precio = $request->get('precio');
+
         $evento->save();
         return redirect()->route('eventos.index')->with('succes','Evento creado correctamente');
 
@@ -130,6 +132,7 @@ class EventoController extends Controller
             $evento->imagen = '/img/eventos/' . $imageName;
         }
               $evento->media_publico = $request->input('media');
+              $evento->precio = $request->get('precio');
         $evento->save();
         return redirect()->route('eventos.index')->with('success', 'Evento actualizado correctamente.');
 

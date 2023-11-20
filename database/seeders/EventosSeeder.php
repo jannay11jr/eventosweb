@@ -20,6 +20,7 @@ class EventosSeeder extends Seeder
         $evento->imagen = ('/img/eventos/zevra.jpg');
         $evento->fecha = '2024-06-30';
         $evento->media_publico = 30000;
+        $evento->precio = 40;
         $evento->save();
 
         $evento = new Evento();
@@ -29,6 +30,7 @@ class EventosSeeder extends Seeder
         $evento->imagen = ('/img/eventos/medusa.jpg');
         $evento->fecha = '2024-10-12';
         $evento->media_publico = 80000;
+        $evento->precio = 60;
         $evento->save();
 
         $evento = new Evento();
@@ -38,6 +40,7 @@ class EventosSeeder extends Seeder
         $evento->imagen = ('/img/eventos/summer_story.jpg');
         $evento->fecha = '2024-06-15';
         $evento->media_publico = 20000;
+        $evento->precio = 30;
         $evento->save();
 
         $evento = new Evento();
@@ -47,6 +50,7 @@ class EventosSeeder extends Seeder
         $evento->imagen = ('/img/eventos/boombastic.jpg');
         $evento->fecha = '2024-9-22';
         $evento->media_publico = 40000;
+        $evento->precio = 20;
         $evento->save();
     }
 }

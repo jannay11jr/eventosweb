@@ -19,6 +19,7 @@ return new class extends Migration
             $table->binary('imagen');
             $table->date('fecha');
             $table->integer('media_publico');
+            $table->integer("precio");
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

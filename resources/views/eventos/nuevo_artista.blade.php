@@ -4,8 +4,8 @@
 
 @section('contenido')
     <div class="container">
-        <h1>Crear artista</h1>
-       <form action="{{route('artistas.store')}}" method="POST" enctype="multipart/form-data">
+        <h1 class="titulo-nuevo">Crear artista</h1>
+       <form action="{{route('artistas.store')}}" method="POST" enctype="multipart/form-data" class="form-nuevo">
             @csrf
 
             <div class="form-group">

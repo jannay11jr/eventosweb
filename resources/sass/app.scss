@@ -12,12 +12,132 @@ body {
     padding: 60px;
 }
 
+
+//PALETA DE COLORES NEGRO 393E41   GRIS D3D0CB    BLANQUECINO E7E5DF  44BBA4 TURQUESA  E7BB41 ORO
+
+.card-evento, .card-artistas {
+    background-color: #E7BB41;
+    border: 5px solid #E7E5DF;
+}
+
+.card-evento:hover{
+    background-color: #44bba4;
+    transition:all .5s ease-in-out;
+
+}
+.card-artista:hover {
+    transform: scale(1.1);
+}
+.btn-buscar{
+    background-color: #E7BB41;
+}
+.btn-buscar:hover{
+    background-color: #E7E5DF;
+    color: #393E41;
+}
+
+.card-detalles {
+    border: 3px solid #E7BB41;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.8, 0.8);
+}
+
+.titulo-evento {
+    text-align: center;
+    font-family: cursive;
+}
+
+.form-login {
+    background-color: #E7BB41;
+}
+
+.form-nuevo {
+    background-color: #E7E5DF;
+    padding: 10px;
+    color: #393E41;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 5px double #E7BB41;
+}
+
+.cards-evento {
+    animation-duration: 1s;
+    animation-name: slidein
+}
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+
+.bounce-animation:hover {
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+
+//PALETA DE COLORES NEGRO 393E41   GRIS D3D0CB    BLANQUECINO E7E5DF  44BBA4 TURQUESA  E7BB41 ORO
+.titulo-nuevo {
+    box-shadow: 0 0 10px #E7BB41;
+    color: #E7BB41;
+    text-shadow: 0 0 10px #000;
+}
+
+.form-editar {
+    border: 5px double #44bba4;
+}
+
+.titulo-editar{
+    box-shadow: 0 0 10px #44bba4;
+    color: #44bba4;
+    text-shadow: 0 0 10px #000;
+}
+
+.evento-body {
+    background-color: #fff;
+    text-fill-color: #000;
+    -webkit-background-clip: text;
+    box-shadow: 0 0 10px #E7BB41;
+    perspective: 100px;
+    padding: 10px;
+}
+
+.titulo2{
+    text-align: center;
+    font-family: cursive;
+}
+
+
 h1, h3{
     text-align: center;
 }
 
 .entrevista{
     text-align: center;
+}
+
+.texto-slider {
+    font-family: cursive;
+    text-shadow: 2px 2px 4px #E7BB41;
+    font-size: 3em;
+}
+
+.registro-form{
+    background-color: #E7BB41;
 }
 
 
@@ -30,6 +150,42 @@ h1, h3{
     //display: flex;
     display: block;
     margin: 0 auto;
+
+}
+.hardwell:hover, .medusa:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+
+
+@keyframes parpadeo {
+    0% {
+        background-color: #E7BB41;
+        color: #000000;
+    }
+    50% {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    100% {
+        background-color: #E7BB41;
+        color: #000000;
+    }
+}
+
+.frases {
+    animation: parpadeo 1s infinite; /* La animación dura 1 segundo y se repite infinitamente */
+}
+
+.cabecera-cards {
+    background-color: #E7E5DF !important;
+    font-family: cursive;
+    text-align: center;
+    color:#E7BB41;
+    font-size: 3em;
 }
 
 
@@ -127,7 +283,7 @@ input[type="text"], input[type="email"], textarea {
 }
 
 .card_contacto {
-    background-color: #969696;
+    background-color: #E7BB41;
 }
 
 
@@ -135,7 +291,7 @@ input[type="text"], input[type="email"], textarea {
     max-width: 100%;
     margin: 2% auto;
     padding: 20px;
-    background-color: #C0C0C0;
+    background-color: #E7BB41;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -164,10 +320,23 @@ input[type="text"], input[type="email"], textarea {
 .entradasForm {
     max-height: 600px;
     overflow-y: auto;
-
+    border: 1px solid #E7BB41;
+    padding: 10px;
+    box-shadow: 0 0 10px #E7BB41;
+    box-sizing: border-box;
+}
+.btn-compras {
+    background-color: #E7BB41;
+    border-radius: 5px;
+    font-family: cursive;
+    padding: 5px;
 }
 
 
+.btn-compras:hover {
+    background-color: #E7E5DF;
+    transform: scale(1.3);
+}
 .btn-evento-borrar{
     margin-top: 15px;
 }

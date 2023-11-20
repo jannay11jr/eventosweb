@@ -1,0 +1,52 @@
+body {
+    font-size: 16px;
+
+}
+
+.container {
+    margin-top: 20px;
+
+}
+
+.event-info {
+    border: 1px solid black;
+}
+.event-info img {
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.qr-code {
+    border: 1px solid #ddd;
+}
+.titulo_condiciones {
+    margin-top: 20px;
+    font-size: 9px;
+}
+
+.condiciones {
+    font-size: 7px;
+    margin-bottom: 10px;
+}
+
+.patrocinadores img {
+    margin: 30px;
+    height: auto;
+    width: 20%;
+}
+.titulo_patrocinadores {
+    text-align: center;
+}
+.container_patrocinadores {
+    border: 1px solid black;
+    background-color: #FFECB3;
+}
+p{
+    margin: 1px;
+}
+.empresa_creadora{
+    margin-top: 10px;
+    font-size: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif';
+}

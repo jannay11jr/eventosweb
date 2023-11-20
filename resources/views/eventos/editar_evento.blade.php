@@ -5,8 +5,8 @@
 @section('contenido')
 
 <div class="container">
-    <h1>Editar evento</h1>
-   <form action="{{route('eventos.update', $evento->id)}}" method="POST" enctype="multipart/form-data">
+    <h1 class="titulo-editar">Editar evento</h1>
+   <form action="{{route('eventos.update', $evento->id)}}" method="POST" enctype="multipart/form-data" class="form-editar form-nuevo">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -57,6 +57,14 @@
         </div>
         @if ($errors->has('media'))
         <div class="text-danger"> {{ $errors->first('media') }} </div>
+        @endif
+
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="text" class="form-control-file" id="precio" name="precio" value="{{$evento->precio}}">
+        </div>
+        @if ($errors->has('precio'))
+        <div class="text-danger"> {{ $errors->first('precio') }} </div>
         @endif
 
         <button type="submit" class="btn btn-dark">Editar Evento</button>

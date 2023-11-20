@@ -10,6 +10,10 @@ use App\Http\Controllers\ComprasController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController as ControllersRegisterController;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\PDFController;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +25,11 @@ use App\Http\Controllers\RegisterController as ControllersRegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/generar-pdf', [StripeController::class, 'getPDF'])->name('generar.pdf');
+
+
+Route::post('/create-checkout-session', [StripeController::class, 'createCheckoutSession']);
 
 Route::get('/', function () {
     return view('inicio/inicio');

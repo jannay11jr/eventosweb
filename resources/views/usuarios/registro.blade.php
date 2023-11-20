@@ -13,15 +13,15 @@
                     </div>
                 @endif
             <div class="card">
-                <div class="card-header" style="text-align: center">
+                <div class="card-header cabecera-cards" style="text-align: center">
                     Registro de usuario
                 </div>
-                <div class="card-body">
+                <div class="card-body registro-form">
                     <form action="{{route('registro.store')}}" method="POST" class="">
                         @csrf
                         <div class="form-group">
                             <label for="registro_nombre">Nombre</label>
-                            <input type="nombre" class="form-control" id="registro_nombre" name="registro_nombre" placeholder="Ingrese su nombre" value={{old('registro_nombre')}}>
+                            <input type="text" class="form-control" id="registro_nombre" name="registro_nombre" placeholder="Ingrese su nombre"  value="{{ old('registro_nombre') }}">
                             @if ($errors->has('registro_nombre'))
                             <div class="text-danger"> {{ $errors->first('registro_nombre') }} </div>
                             @endif
@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <label for="registro_dni">DNI</label>
-                                <input type="dni" class="form-control" id="registro_dni" name="registro_dni"placeholder="Ingrese su DNI" value={{old('registro_dni')}}>
+                                <input type="text" class="form-control" id="registro_dni" name="registro_dni"placeholder="Ingrese su DNI"  value="{{ old('registro_dni') }}">
                                 @if ($errors->has('registro_dni'))
                             <div class="text-danger"> {{ $errors->first('registro_dni') }} </div>
                             @endif
@@ -39,7 +39,7 @@
 
                             <div class="form-group">
                             <label for="registro_email">Correo electrónico</label>
-                            <input type="email" class="form-control" id="registro_email"name="registro_email" placeholder="Ingrese su correo electrónico" value={{old('registro_email')}}>
+                            <input type="email" class="form-control" id="registro_email"name="registro_email" placeholder="Ingrese su correo electrónico"  value="{{ old('registro_email') }}">
                             @if ($errors->has('registro_email'))
                             <div class="text-danger"> {{ $errors->first('registro_email') }} </div>
                             @endif

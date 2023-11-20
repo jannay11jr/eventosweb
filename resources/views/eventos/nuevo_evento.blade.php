@@ -4,8 +4,8 @@
 
 @section('contenido')
     <div class="container">
-        <h1>Crear Evento</h1>
-       <form action="{{route('eventos.store')}}" method="POST" enctype="multipart/form-data">
+        <h1 class="titulo-nuevo">Crear Evento</h1>
+       <form action="{{route('eventos.store')}}" method="POST" enctype="multipart/form-data" class="form-nuevo">
             @csrf
 
             <div class="form-group">
@@ -16,9 +16,9 @@
             <div class="text-danger"> {{ $errors->first('nombre_evento') }} </div>
             @endif
 
-            <div class="form-group">
+            <div class="form-group" width="40px">
                 <label for="fecha_evento">Fecha del Evento</label>
-                <input type="date" class="form-control" id="fecha_evento" name="fecha_evento" value={{old('fecha_evento')}}>
+                <input type="date" class="form-control" id="fecha_evento"  name="fecha_evento" value={{old('fecha_evento')}}>
             </div>
             @if ($errors->has('fecha_evento'))
             <div class="text-danger"> {{ $errors->first('fecha_evento') }} </div>
@@ -55,6 +55,14 @@
             </div>
             @if ($errors->has('media'))
             <div class="text-danger"> {{ $errors->first('media') }} </div>
+            @endif
+
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="text" class="form-control-file" id="precio" name="precio" value={{old('precio')}}>
+            </div>
+            @if ($errors->has('precio'))
+            <div class="text-danger"> {{ $errors->first('precio') }} </div>
             @endif
 
 

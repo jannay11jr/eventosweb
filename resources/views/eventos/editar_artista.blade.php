@@ -4,8 +4,8 @@
 
 @section('contenido')
     <div class="container">
-        <h1>Editar artista</h1>
-       <form action="{{route('artistas.update', $artista->id)}}" method="POST" enctype="multipart/form-data">
+        <h1 class="titulo-editar">Editar artista</h1>
+       <form action="{{route('artistas.update', $artista->id)}}" method="POST" enctype="multipart/form-data" class="form-editar form-nuevo">
             @csrf
             @method('PUT')
             <div class="form-group">

@@ -12,7 +12,7 @@
             <div class="col-md-4">
                 <div class="card text-center mb-3">
                     <img src="{{$artista->img}}" class="card-img-top" alt="Imagen del artista">
-                    <div class="card-body">
+                    <div class="card-body card-artistas">
                         <p class="card-text">{{$artista->nombre}}</p>
                         <p>({{$artista->generos->nombre}})</p>
 
@@ -35,7 +35,7 @@
             </div>
         @endforeach
     </div>
-    <div class=" pagin d-flex justify-content-center">
+    <div class="pagin d-flex justify-content-center">
     {{$artistas->links()}}
     </div>
 @endsection

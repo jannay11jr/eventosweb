@@ -27,7 +27,8 @@ class EventoRequest extends FormRequest
             'fecha_evento' => 'required',
             'desc_evento' => 'required',
             'imagen' => 'required|image',
-            'media' => 'required|numeric'
+            'media' => 'required|numeric',
+            'precio' => 'required |numeric '
         ];
     }
 
@@ -44,7 +45,10 @@ class EventoRequest extends FormRequest
              'imagen.required' => 'La imagen del evento es obligatoria',
              'imagen.image' => 'El archivo debe de ser de tipo imagen',
              'media.required' => 'La media de espectadores es obligatoria',
-             'media.numeric' => 'La media de espectadores debe de ir en formato númerico'
+             'media.numeric' => 'La media de espectadores debe de ir en formato númerico',
+             'precio.numeric' => 'El precio debe de ir en formato númerico',
+             'precio.required' => 'El precio es obligatorio',
+
         ];
     }
 }

@@ -10,18 +10,18 @@
             <input type="text" class="form-control" id="input_busqueda" name="input_busqueda" placeholder="Escribe ciudad, nombre o fecha del evento que buscas:">
         </div>
 
-        <button type="submit" class="btn btn-dark">Buscar</button>
+        <button type="submit" class="btn btn-buscar">Buscar</button>
     </form>
 
-    <div class="row">
+    <div class="row cards-evento">
         @foreach($eventos as $evento)
             <div class="col-md-4">
                 <div class="card text-center mb-3">
                     <img src="{{$evento->imagen}}" class="card-img-top" alt="Imagen del evento">
-                    <div class="card-body">
+                    <div class="card-body card-evento">
                         <h5 class="card-title">{{$evento->fecha}}</h5>
                         <p class="card-text">{{$evento->nombre}}</p>
-                        <a href="{{route('eventos.show', $evento)}}" class="btn btn-dark">Detalles</a>
+                        <a href="{{route('eventos.show', $evento)}}" class="btn btn-dark bounce-animation">Detalles</a>
 
                         @if(auth()->check() && auth()->user()->rol_id === 1)
                         <form action="{{route('eventos.destroy',$evento)}}" method="POST">
