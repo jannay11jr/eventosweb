@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="shortcut icon" href="{{ public_path('favicon/favicon.png') }}" type="image/x-icon">
     <title>Tu entrada de Event Ticket</title>
-    @vite(['resources/sass/pdf.scss', 'resources/js/bootstrap.js'])
+    <link rel="stylesheet" href="../resources/css/pdf.css">
 </head>
 <body>
     <div class="container">
@@ -20,11 +20,24 @@
                     <p><strong>Nombre: </strong>{{auth()->user()->nombre}}</p>
                     <p><strong>Email: </strong>{{auth()->user()->email}}</p>
                     <p><strong>DNI: </strong>{{auth()->user()->dni}}</p>
+                    <br>
+                    <?php
+                        $total=0;
+                        foreach ($compras as $compra){
+                            $total+=$compra['total'];
+                        }
+                    ?>
                     @foreach ($compras as $compra)
-                    <p><strong> Evento: </strong>{{$compra['evento']}}</p>
-                    <p> <strong>Cantidad: </strong>{{$compra['cantidad']}} </p>
-                    <p> <strong>Total:</strong>{{$compra['total']}} € </p>
+                    <p class="datos"><strong> Evento: </strong>{{$compra['evento']}}</p>
+                    <p class="datos"> <strong>Precio Unitario: </strong>{{$compra['precioUnitario']}} € </p>
+                    <p class="datos"> <strong>Cantidad: </strong>{{$compra['cantidad']}} </p>
+                    <p class="datos"> <strong>Total:</strong>{{$compra['total']}} € </p>
+                    <br>
+
                     @endforeach
+
+                    <p class="datos"> <strong>Total Compra:</strong>{{$total}} € </p>
+
 
                 </div>
 

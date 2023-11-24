@@ -20,7 +20,6 @@ class ArtistasController extends Controller
             $artistas = Artista::paginate(6);
             return view ('eventos.artistas', compact('artistas'));
 
-        //return view ('eventos.nuevo_artista');
     }
 
     /**
@@ -74,7 +73,6 @@ class ArtistasController extends Controller
      */
     public function edit(string $id)
     {
-        //$generos = Genero::all();
         $eventos = Evento::all();
         $artista = Artista::findOrFail($id);
         return view('eventos.editar_artista', compact('artista', 'eventos'));

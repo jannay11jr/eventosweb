@@ -17,10 +17,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('evento_id');
-            $table->foreign('evento_id')->references('id')->on('eventos');
-            $table->unsignedBigInteger('compra_id');
-            $table->foreign('compra_id')->references('id')->on('compras');
+            $table->unsignedBigInteger('eventos_id');
+            $table->foreign('eventos_id')->references('id')->on('eventos');
+            $table->unsignedBigInteger('compras_id');
+            $table->foreign('compras_id')->references('id')->on('compras');
         });
     }
 

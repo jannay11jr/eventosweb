@@ -7,7 +7,7 @@
 <div class="container mt-5">
     <div class="card">
         <img src="{{$evento->imagen}}" class="card-img-top" alt="{{$evento->nombre}}">
-        <div class="card-body">
+        <div class="card-body fondo-detalles">
             <h5 class="card-title titulo-evento">{{$evento->nombre}}</h5>
             <div class="evento-body">
             <p class="card-text">{{$evento->descripcion}}</p>

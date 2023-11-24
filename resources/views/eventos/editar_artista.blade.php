@@ -24,13 +24,12 @@
             </div>
 
             <div>
-            <select class="form-select" name="generos_id" id="generos_id" value="{{$artista->generos_id}}">
-                dd($artista->generos_id);
-                <option value="1">Rock</option>
-                <option value="2">Pop</option>
-                <option value="3">Urbano</option>
-                <option value="4">Electronica</option>
-                <option value="5">Reggaeton</option>
+            <select class="form-select" name="generos_id" id="generos_id">
+                <option value="1" @if($artista->generos_id == 1) selected @endif >Rock</option>
+                <option value="2" @if($artista->generos_id == 2) selected @endif>Pop</option>
+                <option value="3" @if($artista->generos_id == 3) selected @endif>Urbano</option>
+                <option value="4" @if($artista->generos_id == 4) selected @endif>Electronica</option>
+                <option value="5" @if($artista->generos_id == 5) selected @endif>Reggaeton</option>
             </select>
         </div>
 

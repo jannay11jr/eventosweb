@@ -61,7 +61,7 @@ class EventoController extends Controller
         $fechaEvento = new DateTime($request->input('fecha_evento'));
 
         if ($fechaEvento < $fechaActual) {
-        return redirect()->route('eventos.index')->with('error', 'La fecha del evento debe ser mayor o igual a la fecha actual.');
+        return redirect()->route('nuevo_evento')->with('error', 'La fecha del evento debe ser mayor o igual a la fecha actual.');
         }
 
         $evento = new Evento();
@@ -119,6 +119,12 @@ class EventoController extends Controller
     {
 
         $evento = Evento::findOrFail($id);
+        $fechaActual = new DateTime();
+        $fechaEvento = new DateTime($request->input('fecha_evento'));
+
+        if ($fechaEvento < $fechaActual) {
+        return redirect()->back()->with('error', 'La fecha del evento debe ser mayor o igual a la fecha actual.');
+        }
 
         $evento->nombre = $request->input('nombre_evento');
         $evento->localizacion = $request->input('loc_evento');

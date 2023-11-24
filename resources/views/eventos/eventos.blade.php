@@ -13,6 +13,7 @@
         <button type="submit" class="btn btn-buscar">Buscar</button>
     </form>
 
+
     <div class="row cards-evento">
         @foreach($eventos as $evento)
             <div class="col-md-4">
@@ -48,8 +49,4 @@
     {{$eventos->links()}}
     </div>
 @endsection
-
-
-
-
 

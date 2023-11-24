@@ -9,6 +9,12 @@
    <form action="{{route('eventos.update', $evento->id)}}" method="POST" enctype="multipart/form-data" class="form-editar form-nuevo">
         @csrf
         @method('PUT')
+        @if(session('error'))
+        <div class="alert alert-danger">
+        {{ session('error') }}
+        </div>
+        @endif
+
         <div class="form-group">
             <label for="nombre_evento">Nombre del Evento</label>
             <input type="text" class="form-control" id="nombre_evento" name="nombre_evento" placeholder="Nombre del Evento" value="{{$evento->nombre}}">
@@ -35,7 +41,7 @@
 
         <div class="form-group">
             <label for="desc_evento">Descripción</label>
-            <textarea class="form-control" id="desc_evento" name="desc_evento" {{$evento->descripcion}}></textarea>
+            <textarea class="form-control" id="desc_evento" name="desc_evento">{{$evento->descripcion}}</textarea>
         </div>
         @if ($errors->has('desc_evento'))
         <div class="text-danger"> {{ $errors->first('desc_evento') }} </div>

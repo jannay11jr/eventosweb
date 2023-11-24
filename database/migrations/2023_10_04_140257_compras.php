@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('precio_total');
             $table->rememberToken();
             $table->timestamps();
-            $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
         });
     }

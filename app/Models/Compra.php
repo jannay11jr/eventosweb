@@ -15,7 +15,7 @@ class Compra extends Model
         return $this->hasMany(Entrada::class);
     }
 
-    public function usuarios(){
+    public function user(){
         return $this->belongsTo(Usuario::class);
     }
 }

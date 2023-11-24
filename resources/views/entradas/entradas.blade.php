@@ -8,6 +8,11 @@
         <div class="entradasForm">
             <form action="/create-checkout-session" method="POST" name="entradasForm2" id="entradasForm2">
                 @csrf
+                @if(session('error'))
+                <div class="alert alert-danger">
+                {{ session('error') }}
+                </div>
+                @endif
                 @foreach($eventos as $evento)
                     <p>
                         <label for="{{$evento->id}}">{{$evento->nombre}}</label>
@@ -27,3 +32,4 @@
         </div>
     </div>
 @endsection
+

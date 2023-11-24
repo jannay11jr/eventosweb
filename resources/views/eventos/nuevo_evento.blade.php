@@ -7,6 +7,11 @@
         <h1 class="titulo-nuevo">Crear Evento</h1>
        <form action="{{route('eventos.store')}}" method="POST" enctype="multipart/form-data" class="form-nuevo">
             @csrf
+            @if(session('error'))
+            <div class="alert alert-danger">
+            {{ session('error') }}
+            </div>
+            @endif
 
             <div class="form-group">
                 <label for="nombre_evento">Nombre del Evento</label>
