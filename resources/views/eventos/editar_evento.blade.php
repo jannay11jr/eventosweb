@@ -32,7 +32,7 @@
         @endif
 
         <div class="form-group">
-            <label for="localizacion">Localizacion</label>
+            <label for="loc_evento">Localizacion</label>
             <input type="text" class="form-control" id="loc_evento" name="loc_evento" value="{{$evento->localizacion}}">
         </div>
         @if ($errors->has('loc_evento'))

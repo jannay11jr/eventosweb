@@ -63,7 +63,7 @@ body {
     border: 5px double #E7BB41;
 }
 
-.cards-evento {
+.cards-evento, .imgs-inicio {
     animation-duration: 1s;
     animation-name: slidein
 }
@@ -116,6 +116,7 @@ body {
     box-shadow: 0 0 10px #000;
     perspective: 100px;
     padding: 10px;
+    color: #000;
 }
 
 .titulo2{
@@ -323,6 +324,29 @@ input[type="text"], input[type="email"], textarea {
     font-family: cursive;
     padding: 5px;
 }
+
+.img-inicio {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.img-inicio:hover {
+    transform: rotate(360deg);
+    animation: giro 3s linear infinite;
+  }
+
+  @keyframes giro {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
 
 
 .btn-compras:hover {

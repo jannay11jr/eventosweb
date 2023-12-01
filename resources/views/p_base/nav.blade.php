@@ -48,7 +48,7 @@
             </li>
             @else
             <li class="nav-item">
-                <a class="nav-link" href="{{'login'}}"> <i class="far  fa-user"></i> Acceder</a>
+                <a class="nav-link" href="{{route('login.login')}}"> <i class="far  fa-user"></i> Acceder</a>
             </li>
 
             @endif

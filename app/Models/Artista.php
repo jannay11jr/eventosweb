@@ -13,9 +13,7 @@ class Artista extends Model
     public function generos(){
         return $this->belongsTo(Genero::class);
         }
-    public function canciones(){
-        return $this->belongsTo(Cancion::class);
-    }
+
 
     public function eventos(){
         return $this->belongsToMany(Evento::class, 'pivot_eventos_artistas', 'artista_id', 'evento_id');

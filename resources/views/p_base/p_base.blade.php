@@ -4,6 +4,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
             <title>@yield('titulo')</title>
+            <link rel="stylesheet" href="ruta/del/estilos.css">
+
             @vite(['resources/sass/app.scss', 'resources/js/bootstrap.js'])
     </head>
     <body>

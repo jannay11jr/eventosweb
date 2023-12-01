@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesSeeder::class);
         $this->call(EventosSeeder::class);
         $this->call(ArtistasSeeder::class);
-        $this->call(CancionesSeeder::class);
         $this->call(ComprasSeeder::class);
         $this->call(EntradasSeeder::class);
         $this->call(GenerosSeeder::class);

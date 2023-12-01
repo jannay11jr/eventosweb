@@ -16,13 +16,13 @@ class ArtistasSeeder extends Seeder
     {
         $artista = new Artista();
         $artista ->nombre = "Hardwell";
-        $artista ->img = ('/img/artistas/hardwell1.jpg');
+        $artista ->img = ('/img/artistas/hardwell.jpg');
         $artista->generos_id = 4;
         $artista->save();
 
         $artista = new Artista();
         $artista ->nombre = "David Guetta";
-        $artista ->img = ('/img/artistas/david_guetta3.jpg');
+        $artista ->img = ('/img/artistas/david_guetta.jpg');
         $artista->generos_id = 4;
         $artista->save();
 
@@ -40,13 +40,13 @@ class ArtistasSeeder extends Seeder
 
         $artista = new Artista();
         $artista ->nombre = "Maria Becerra";
-        $artista ->img = ('/img/artistas/maria_becerra1.jpg');
+        $artista ->img = ('/img/artistas/maria_becerra.jpg');
         $artista->generos_id = 3;
         $artista->save();
 
         $artista = new Artista();
         $artista ->nombre = "Lola Indigo";
-        $artista ->img = ('/img/artistas/lola.jpg');
+        $artista ->img = ('/img/artistas/lola_indigo.jpg');
         $artista->generos_id = 3;
 
         $artista->save();
@@ -60,7 +60,7 @@ class ArtistasSeeder extends Seeder
 
         $artista = new Artista();
         $artista ->nombre = "Ozuna";
-        $artista ->img = ('/img/artistas/ozuna2.jpg');
+        $artista ->img = ('/img/artistas/ozuna.jpg');
         $artista->generos_id = 5;
         $artista->save();
 

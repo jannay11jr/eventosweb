@@ -9,7 +9,7 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-                <label for="nombre_evento">Nombre del artista</label>
+                <label for="nombre_artista">Nombre del artista</label>
                 <input type="text" class="form-control" id="nombre_artista" name="nombre_artista" placeholder="Nombre del artista" value="{{$artista->nombre}}">
             </div>
             @if ($errors->has('nombre_artista'))

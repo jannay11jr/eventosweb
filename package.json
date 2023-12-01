@@ -12,5 +12,8 @@
         "laravel-vite-plugin": "^0.8.0",
         "sass": "^1.69.5",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "sass-watch": "^0.1.0"
     }
 }

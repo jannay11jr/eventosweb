@@ -6,7 +6,7 @@
 
 @section('contenido')
     <h1 style="text-shadow: 2px 2px 4px #E7BB41">BIENVENIDO A LA PÁGINA DE EVENT-TICKET</h1>
-    <p style="text-align: center">Noticias, entrevistas y mucho más.</p>
+    <p style="text-align: center">Noticias, entradas y mucha diversión.</p>
 
     <div class="container">
         <div class="row">
@@ -45,63 +45,48 @@
 
 
 
-    <h3 class="titulo2">Algunos artistas de los que eventualmente vendemos tickets</h3>
+    <h3 class="titulo2">Artistas TOP ⭐️ de los que eventualmente vendemos tickets</h3>
 
-    <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="container mt-4">
 
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/imagine_dragons.jpg" class="d-block w-100" alt="Foto de Imagine Dragons">
-          <div class="carousel-caption  d-md-block">
-            <h5 class="texto-slider">Imagine Dragons</h5>
+        <div class="imgs-inicio">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/justin%20bieber"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/justin_bieber.jpg" class="img-inicio" alt="Justin Bieber">
+           </a>
+          </div>
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/acdc"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/acdc.jpg" class="img-inicio" alt="ACDC"></a>
+          </div>
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/paulo%20londra"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/paulo_londra.jpg" class="img-inicio" alt="Paulo Londra"></a>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="img/shakira.jpg" class="d-block w-100" alt="Foto de Shakira">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="texto-slider">Shakira</h5>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/daddy%20yankee"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/daddy_yankee.jpg" class="img-inicio" alt="Daddy Yankee"></a>
           </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/justin_bieber.jpg" class="d-block w-100" alt="Foto de Justin">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="texto-slider">Justin Bieber</h5>
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/imagine%20dragons"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/imagine_dragons.jpg" class="img-inicio" alt="Imagine Dragons"></a>
           </div>
+          <div class="col-md-4 mb-4">
+            <a href="https://open.spotify.com/search/melendi"  target="_blank" rel="noopener noreferrer" class="enlaces_artistas"><img src="img/melendi1.jpg" class="img-inicio" alt="Melendi"></a>
         </div>
-        <div class="carousel-item">
-          <img src="img/melendi.jpg" class="d-block w-100" alt="Foto de Melendi">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="texto-slider">Melendi</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="img/paulo_londra.jpg" class="d-block w-100" alt="Foto de Paulo Londra">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="texto-slider">Paulo Londra</h5>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-</div>
+
 
 <hr class="separador my-4">
 
 <div class="row">
     <h3 class="center titulo2">Aftermovies más recientes de conciertos y festivales que colaboran con Event-Ticket</h3>
     <div class="col-12 col-md-6 col-lg-6 video_yt">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CbRoIUjeNM8?si=fIB-2PPqycO7sDwy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/CbRoIUjeNM8?si=fIB-2PPqycO7sDwy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe alt="Video del Medusa">
     </div>
     <div class="col-12 col-md-6 col-lg-6 video_yt">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/izYDADBHhmk?si=ieukt357nBlGjPY3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/izYDADBHhmk?si=ieukt357nBlGjPY3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe alt="Video del Boombastic">
     </div>
 </div>
 
@@ -110,15 +95,17 @@
 <div class="row sponsors">
 
     <div class="col-4 col-md-4 col-lg-4">
-    <img class="im_partners" src="img/cola.png" >
+    <img class="im_partners" src="img/cola.png" alt="Coca Cola">
     </div>
     <div class="col-4 col-md-4 col-lg-4">
-    <img class="im_partners" src="img/fagor.png">
+    <img class="im_partners" src="img/fagor.png" alt="Fagor">
     </div>
     <div class="col-4 col-md-4 col-lg-4">
-    <img class="im_partners" src="img/sony.png">
+    <img class="im_partners" src="img/sony.png" alt="Sony">
     </div>
 
 </div>
 
 @endsection
+
+
