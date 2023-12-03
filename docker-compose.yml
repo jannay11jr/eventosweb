@@ -11,9 +11,13 @@ services:
     ports:
       - "8000:8000"
       - "8080:80"
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
+      - "5173:5173"
+    expose:
+    - "80" #Esto tambien
+    - "8000" #Esto lo he añadido ahora
+    # dns:
+    #   - 8.8.8.8
+    #   - 8.8.4.4
     depends_on:
       - db
 
@@ -28,6 +32,7 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+
 
 volumes:
   db_data:

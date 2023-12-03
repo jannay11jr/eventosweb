@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('pivot_eventos_artistas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('evento_id');
-            $table->foreign('evento_id')->references('id')->on('eventos');
+
             $table->unsignedBigInteger('artista_id');
             $table->foreign('artista_id')->references('id')->on('artistas');
+            $table->unsignedBigInteger('evento_id');
+            $table->foreign('evento_id')->references('id')->on('eventos');
             $table->timestamps();
         });
     }

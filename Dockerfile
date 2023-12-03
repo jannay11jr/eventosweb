@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     nodejs npm \
     && rm -rf /var/lib/apt/lists/*
 
+
 # Instalar extensiones PHP necesarias
 RUN docker-php-ext-install bcmath gd zip pdo_mysql
 
@@ -18,7 +19,7 @@ COPY . /var/www/html
 WORKDIR /var/www/html
 
 # Instalar dependencias de Composer y compilar estilos
-RUN npm install && npm run build
+#RUN npm install && npm run build
 
 # Ejecutar migraciones y seeders
 #CMD ["php", "artisan", "migrate:fresh", "--seed"]
