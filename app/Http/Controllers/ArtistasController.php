@@ -107,6 +107,8 @@ class ArtistasController extends Controller
      */
     public function destroy(string $id)
     {
+        $artista=Artista::findOrFail($id);
+        $artista->eventos()->detach();
         Artista::findOrFail($id)->delete();
         $artistas = Artista::get();
         return redirect()->route('artistas.index')->with('succes', 'Artista eliminado correctamente');

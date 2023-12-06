@@ -149,6 +149,8 @@ class EventoController extends Controller
      */
     public function destroy(string $id)
     {
+        $evento= Evento::findOrFail($id);
+        $evento->artistas()->detach();
         Evento::findOrFail($id)->delete();
         $eventos = Evento::get();
         return redirect()->route('eventos.index')->with('succes', 'Evento eliminado correctamente');

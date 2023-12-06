@@ -12156,16 +12156,16 @@ input[type=text], input[type=email], textarea {
 }
 
 .img-inicio:hover {
-  transform: rotate(360deg);
+  transform: scale(0.9);
   animation: giro 3s linear infinite;
 }
 
 @keyframes giro {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(0.9);
   }
 }
 .btn-compras:hover {
