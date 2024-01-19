@@ -23,9 +23,9 @@ class UsuariosSeeder extends Seeder
 
 
         $usuario = new Usuario();
-        $usuario->nombre = 'Bea';
+        $usuario->nombre = 'Juan';
         $usuario->dni = '47778908B';
-        $usuario->email = 'bea@gmail.com';
+        $usuario->email = 'juan@gmail.com';
         $usuario->password = bcrypt('kijuhnjy.1a');
         $usuario->rol_id = 2;
         $usuario->save();

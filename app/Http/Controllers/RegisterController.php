@@ -39,12 +39,32 @@ class RegisterController extends Controller
 
 
 
+
         $usuario = new Usuario();
         $usuario->nombre = $request->input('registro_nombre');
         $usuario->dni = $request->input('registro_dni');
         $usuario->email = $request->input('registro_email');
         $usuario->password = Hash::make($request->input('registro_password'));
         $usuario->rol_id = 2;
+
+
+        $dni_existente = Usuario::where('dni', $usuario->dni)->first();
+
+        if ($dni_existente) {
+            return redirect()->route('registro')->withErrors([
+                'registro_dni' => 'El DNI ya existe, prueba con otro',
+            ]);
+        }
+
+        $email_existente = Usuario::where('email', $usuario->email)->first();
+
+        if ($email_existente) {
+            return redirect()->route('registro')->withErrors([
+                'registro_email' => 'El correo electrónico ya existe, prueba con otro',
+            ]);
+        }
+
+
         $usuario ->save();
 
 
