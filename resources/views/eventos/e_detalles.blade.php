@@ -23,7 +23,7 @@
             <p class="card-text"><strong>Asistencia media:</strong>{{$evento->media_publico}}</p>
             <p class="card-text"><strong>Precio entrada: </strong>{{$evento->precio}}</p>
             </div>
-            <h2 class="titulo-evento">Algunos artistas que actuaron:</h2>
+            <h2 class="titulo-evento">TOP 3 artistas confirmados:</h2>
             <div class="row justify-content-center">
                 @foreach ($evento->artistas as $artista)
                 <div class="col text-center card-artista">
