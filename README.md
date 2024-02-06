@@ -19,6 +19,7 @@ Filtro de búsqueda: Los usuarios pueden utilizar un filtro de búsqueda para en
 ## Instalación ##
 Para instalar EVENT-TICKET, necesitarás instalar lo siguiente:
 
+- Artisan
 - Composer
 - Laravel
 - Un servidor local como WAMP o XAMPP
